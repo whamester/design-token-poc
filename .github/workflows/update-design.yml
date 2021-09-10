@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - name: Transform design tokens 
+      - name: Transform design tokens
         run: 'yarn install && yarn transform-tokens'
       - name: Commit files
         run: |
