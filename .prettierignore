@@ -1,0 +1,11 @@
+/node_modules
+/build
+/public
+package.json
+.gitignore
+/src/reportWebVitals.ts
+/src/shared/graphql/generated/fragmentTypes.json
+/src/shared/graphql/generated/types.tsx
+src/**/*.generated.ts
+.env
+yarn.lock
