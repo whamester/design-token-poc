@@ -1,0 +1,57 @@
+name: Build design tokens
+on:
+  repository_dispatch:
+    types: update-tokens
+
+jobs:
+  build:
+    name: Transform Figma design tokens
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create branch from master
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: 'release-design-tokens-update'
+      - name: Checkout branch release-design-tokens-update
+        uses: actions/checkout@release-design-tokens-update
+      - name: mkdir "design-tokens" directory
+        run: 'mkdir -p src/styles/design-tokens'
+      - name: create design tokens json file
+        id: create-json
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: 'design-tokens.json'
+          json: ${{ github.event.client_payload.tokens }}
+          dir: './src/styles/design-tokens'
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Transform design tokens
+        run: 'yarn install && yarn transform-design-tokens'
+      - name: Commit files
+        run: |
+          git config --local user.email "wonnyohamester@outlook.com"
+          git config --local user.name "whamester"
+          git commit -m "chore: design tokens update ${GITHUB_SHA}" -a
+      - name: Persist changes in repository
+        uses: ad-m/github-push-action@release-design-tokens-update
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      - name: Create pull request
+        uses: devops-infra/action-pull-request@v0.4.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: release-design-tokens-update
+          target_branch: master
+          title: "PR: Update design tokens"
+          template: .github/PULL_REQUEST_TEMPLATE.md
+          body: "**Automated pull request, updating design tokens**"
+          reviewer: whamester
+          assignee: whamester
+          draft: false
+          new_string: "** Automatic pull request**"
+          get_diff: true
