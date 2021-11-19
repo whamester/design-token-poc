@@ -7,7 +7,10 @@
       "files": [
         {
           "destination": "_variables.scss",
-          "format": "scss/variables"
+          "format": "scss/variables",
+          "options": {
+            "showFileHeader": false
+          }
         }
       ]
     },
@@ -17,7 +20,10 @@
       "files": [
         {
           "destination": "_variables.less",
-          "format": "less/variables"
+          "format": "less/variables",
+          "options": {
+            "showFileHeader": false
+          }
         }
       ]
     },
@@ -27,7 +33,10 @@
       "files": [
         {
           "destination": "_variables.css",
-          "format": "css/variables"
+          "format": "css/variables",
+          "options": {
+            "showFileHeader": false
+          }
         }
       ]
     },
