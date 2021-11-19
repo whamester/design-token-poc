@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import styles from './styles/design-tokens/json/styles.json'
 import ravn_logo from './assets/images/ravn.png'
 import './App.css'
-import Buttons from './components/buttons'
 import { ThemeProvider } from './styles/ThemeProvider'
 
 const App = () => {
@@ -84,15 +83,15 @@ const StyledDot = styled.div`
 const SyledButton = styled.button`
   padding: 12px 16px;
   width: 200px;
-  background-color: ${(props) => props.theme.colors.ColorSecondary6};
   color: ${(props) => props.theme.colors.ColorPrimary1};
-  border: solid 1px ${(props) => props.theme.colors.ColorSecondary5};
+  background-color: ${(props) => props.theme.colors.ColorPrimary2};
+  border: solid 2px ${(props) => props.theme.colors.ColorPrimary3};
   cursor: pointer;
   margin-bottom: 64px;
 
   :hover {
-    background-color: ${(props) => props.theme.colors.ColorDanger6};
-    color: ${(props) => props.theme.colors.ColorTertiary5};
-    border: solid 1px ${(props) => props.theme.colors.ColorDanger3};
+    color: ${(props) => props.theme.colors.ColorSecondary3};
+    background-color: ${(props) => props.theme.colors.ColorSecondary1};
+    border: solid 2px ${(props) => props.theme.colors.ColorSecondary2};
   }
 `
