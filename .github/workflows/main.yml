@@ -1,0 +1,36 @@
+name: Build design tokens
+on:
+  repository_dispatch:
+    types: update-tokens
+
+jobs:
+  build:
+    name: Transform Figma design tokens
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: mkdir "design-tokens" directory
+        run: 'mkdir -p src/ui/styles/design-tokens'
+      - name: create design tokens json file
+        id: create-json
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: 'design-tokens.json'
+          json: ${{ github.event.client_payload.tokens }}
+          dir: './src/ui/styles/design-tokens'
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Transform design tokens 
+        run: 'yarn install && yarn transform-tokens'
+      - name: Commit files
+        run: |
+          git config --local user.email "wonnyohamester@outlook.com"
+          git config --local user.name "whamester"
+          git commit -m "chore: design tokens update ${GITHUB_SHA}" -a
+      - name: Persist changes in repository
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
