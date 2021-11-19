@@ -26,8 +26,8 @@ jobs:
         run: 'yarn install && yarn transform-tokens'
       - name: Commit files
         run: |
-          git config --local user.email "gerardo.estrada.dg@gmail.com"
-          git config --local user.name "Gerald17"
+          git config --local user.email "wonnyohamester@outlook.com"
+          git config --local user.name "whamester"
           git commit -m "chore: design tokens update ${GITHUB_SHA}" -a
       - name: Persist changes in repository
         uses: ad-m/github-push-action@master
