@@ -17,10 +17,12 @@ const App = () => {
         <h1>
           <b>Design. Build. Scale.</b>
         </h1>
-        <StyledLink className="app-link" href="https://www.ravn.co/" target="_blank">
-          ravn.co
-        </StyledLink>
-        <Buttons />
+
+        <SyledButton>
+          <h2>
+            <b>Click me!</b>
+          </h2>
+        </SyledButton>
 
         <div>
           {designTokenKeys.map((tokenKey) => {
@@ -77,4 +79,20 @@ const StyledDot = styled.div`
   align-self: center;
   border: solid 0.5px ${(props) => props.theme.colors.ColorPrimary1};
   margin-left: 32px;
+`
+
+const SyledButton = styled.button`
+  padding: 12px 16px;
+  width: 200px;
+  background-color: ${(props) => props.theme.colors.ColorSecondary6};
+  color: ${(props) => props.theme.colors.ColorPrimary1};
+  border: solid 1px ${(props) => props.theme.colors.ColorSecondary5};
+  cursor: pointer;
+  margin-bottom: 64px;
+
+  :hover {
+    background-color: ${(props) => props.theme.colors.ColorDanger6};
+    color: ${(props) => props.theme.colors.ColorTertiary5};
+    border: solid 1px ${(props) => props.theme.colors.ColorDanger3};
+  }
 `
