@@ -1,6 +1,36 @@
 {
   "source": ["./src/styles/design-tokens/*.json"],
   "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "./src/styles/design-tokens/scss/",
+      "files": [
+        {
+          "destination": "_variables.scss",
+          "format": "scss/variables"
+        }
+      ]
+    },
+    "less": {
+      "transformGroup": "less",
+      "buildPath": "./src/styles/design-tokens/less/",
+      "files": [
+        {
+          "destination": "_variables.less",
+          "format": "less/variables"
+        }
+      ]
+    },
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "./src/styles/design-tokens/css/",
+      "files": [
+        {
+          "destination": "_variables.css",
+          "format": "css/variables"
+        }
+      ]
+    },
     "json-flat": {
       "transforms": ["attribute/cti", "name/cti/pascal", "size/rem", "color/hex8"],
       "buildPath": "./src/styles/design-tokens/json/",

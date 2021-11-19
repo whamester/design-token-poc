@@ -10,14 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: mkdir "design-tokens" directory
-        run: 'mkdir -p src/ui/styles/design-tokens'
+        run: 'mkdir -p src/styles/design-tokens'
       - name: create design tokens json file
         id: create-json
         uses: jsdaniell/create-json@1.1.2
         with:
           name: 'design-tokens.json'
           json: ${{ github.event.client_payload.tokens }}
-          dir: './src/ui/styles/design-tokens'
+          dir: './src/styles/design-tokens'
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
