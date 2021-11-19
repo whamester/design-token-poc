@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Work Sans SemiBold';
+  src: url('WorkSans-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('WorkSans-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}

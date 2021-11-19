@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 14.x
       - name: Transform design tokens
-        run: 'yarn install && yarn transform-tokens'
+        run: 'yarn install && yarn transform-design-tokens'
       - name: Commit files
         run: |
           git config --local user.email "wonnyohamester@outlook.com"
