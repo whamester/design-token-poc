@@ -1,5 +1,5 @@
 {
-  "ColorPrimary1": "#f3f0ffff",
+  "ColorPrimary1": "#ffa3fdff",
   "ColorPrimary2": "#ddd7f2ff",
   "ColorPrimary3": "#c8bbeeff",
   "ColorPrimary4": "#a591e6ff",
@@ -171,9 +171,6 @@
   "ColorBorderSwitchInactiveDisabled": "#eff0f6ff",
   "ColorInputColorBorderInputEnabled": "#d9dbe9ff",
   "ColorInputDesktopTextAffixEnabled": "#262338ff",
-  "ButtonPrimaryDefaultBackgroundEnabled": "#7057c7ff",
-  "ButtonPrimaryDefaultTextEnabled": "#fcfcfcff",
-  "ButtonPrimaryDefaultBorderEnabled": "#7057c7ff",
   "FontDesktopBodyRegularXl": {"fontSize":20,"textDecoration":"none","fontFamily":"Raleway","fontWeight":500,"fontStyle":"normal","fontStretch":"normal","letterSpacing":0,"lineHeight":32,"paragraphIndent":0,"paragraphSpacing":0,"textCase":"none"},
   "FontDesktopBodyRegularL": {"fontSize":18,"textDecoration":"none","fontFamily":"Raleway","fontWeight":500,"fontStyle":"normal","fontStretch":"normal","letterSpacing":0,"lineHeight":32,"paragraphIndent":0,"paragraphSpacing":0,"textCase":"none"},
   "FontDesktopBodyRegularM": {"fontSize":15,"textDecoration":"none","fontFamily":"Raleway","fontWeight":500,"fontStyle":"normal","fontStretch":"normal","letterSpacing":0,"lineHeight":24,"paragraphIndent":0,"paragraphSpacing":0,"textCase":"none"},
